@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stud_eeze_app/utils/global.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -31,8 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                                color:
-                                    Styles.CUSTOM_SHADOW_COLOR.withOpacity(.1),
+                                color:Colors.purpleAccent.withOpacity(.5),
                                 blurRadius: 3,
                                 offset: Offset(0, 5))
                           ],
@@ -43,24 +43,25 @@ class _LoginPageState extends State<LoginPage> {
                               fit: BoxFit.fill)),
                     ),
                   ),
-                  Center(child: StoreObserver<UserStore>(
-                      builder: (UserStore store, BuildContext context) {
-                    return CustomButton(
-                      labelText: 'Sign In With Gmail',
-                      isLoading: store.isLoading,
-                      postIcon: Icons.arrow_forward,
-                      visiblepostIcon: true,
-                      onTap: () async {
-                        await store.logIn();
-                        if (preferenceService.getUID() == null) {
-                          showSnackbar("Error in login", context);
-                        } else {
-                          currentPage = 0;
-                          Navigator.pushNamed(context, SplashPage.routeNamed);
-                        }
-                      },
-                    );
-                  }))
+
+                  // Center(child: StoreObserver<UserStore>(
+                  //     builder: (UserStore store, BuildContext context) {
+                  //   return CustomButton(
+                  //     labelText: 'Sign In With Gmail',
+                  //     isLoading: store.isLoading,
+                  //     postIcon: Icons.arrow_forward,
+                  //     visiblepostIcon: true,
+                  //     onTap: () async {
+                  //       await store.logIn();
+                  //       if (preferenceService.getUID() == null) {
+                  //         showSnackbar("Error in login", context);
+                  //       } else {
+                  //         currentPage = 0;
+                  //         Navigator.pushNamed(context, SplashPage.routeNamed);
+                  //       }
+                  //     },
+                  //   );
+                  // }))
                 ],
               )),
         ),

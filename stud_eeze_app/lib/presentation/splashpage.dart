@@ -2,6 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:http/http.dart';
+import 'package:stud_eeze_app/presentation/tab_pages/homepage.dart';
+import 'package:stud_eeze_app/presentation/tab_pages/info.dart';
+import 'package:stud_eeze_app/presentation/tab_pages/post_page.dart';
+import 'package:stud_eeze_app/presentation/tab_pages/profile_page.dart';
+import 'package:stud_eeze_app/utils/global.dart';
 
 
 class SplashPage extends StatefulWidget {
@@ -17,13 +23,13 @@ class _SplashPageState extends State<SplashPage> {
         return HomePage();
         break;
       case 1:
-        return SearchPage();
+        return PostPage();
         break;
       case 2:
-        return Cart();
+        return ProfilePage();
         break;
       case 3:
-        return ProfilePage();
+        return InfoPage();
         break;
       default:
         return HomePage();
@@ -66,7 +72,7 @@ class _SplashPageState extends State<SplashPage> {
               padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: currentPage == index
-                    ? Styles.BOTTOMNAVIGATIONBAR_CONTAINER_COLOR
+                    ? Colors.purpleAccent
                     : Colors.transparent,
                 borderRadius: BorderRadius.circular(5),
               ),
@@ -74,8 +80,8 @@ class _SplashPageState extends State<SplashPage> {
                 child: Icon(
                   icontab,
                   color: currentPage == index
-                      ? Styles.PRIMARY_COLOR
-                      : Styles.ICON_COLOR,
+                      ? Colors.purpleAccent
+                      : Colors.white,
                   size: ScreenUtil.instance.setHeight(32),
                 ),
               ),

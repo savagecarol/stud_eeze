@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 
 import 'package:provider/provider.dart';
 import 'package:stud_eeze_app/presentation/splashpage.dart';
-void main() => runApp(MultiVendor());
+void main() => runApp(StudEeze());
 
-class MultiVendor extends StatelessWidget {
+class StudEeze extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
