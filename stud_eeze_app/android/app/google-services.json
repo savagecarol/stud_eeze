@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "187454144130",
+    "firebase_url": "https://stud-eeze.firebaseio.com",
+    "project_id": "stud-eeze",
+    "storage_bucket": "stud-eeze.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187454144130:android:fc09399c36b98c3ed9be9b",
+        "android_client_info": {
+          "package_name": "com.example.stud_eeze_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187454144130-hdjkra79hahe46ark7vs75jgbopm53sb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stud_eeze_app",
+            "certificate_hash": "7eeb14c3dfe08e1cb33ee024270f4f21bdab3267"
+          }
+        },
+        {
+          "client_id": "187454144130-2dska3v9irfdsi7kaid719ieu9njqi2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoV3qbphB6ziqMd8WY1wJq1Ysfra57gX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187454144130-2dska3v9irfdsi7kaid719ieu9njqi2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
