@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:http/http.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/homepage.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/info.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/post_page.dart';
@@ -44,9 +43,9 @@ class _SplashPageState extends State<SplashPage> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           _getBottomBarItem(index: 0, icontab: Icons.home),
-          _getBottomBarItem(index: 1, icontab: Icons.search),
-          _getBottomBarItem(index: 2, icontab: Icons.shopping_cart),
-          _getBottomBarItem(index: 3, icontab: Icons.person),
+          _getBottomBarItem(index: 1, icontab: Icons.add),
+          _getBottomBarItem(index: 2, icontab: Icons.person),
+          _getBottomBarItem(index: 3, icontab: Icons.info),
         ],
       ),
     );
@@ -80,8 +79,8 @@ class _SplashPageState extends State<SplashPage> {
                 child: Icon(
                   icontab,
                   color: currentPage == index
-                      ? Colors.purpleAccent
-                      : Colors.white,
+                      ? Colors.white
+                      : Colors.black,
                   size: ScreenUtil.instance.setHeight(32),
                 ),
               ),
