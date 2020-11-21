@@ -46,6 +46,8 @@ dependencies:
   flutter_signin_button: ^1.1.0
   google_sign_in: ^4.4.4
   flutter_plugin_pdf_viewer: 
+  agora_rtc_engine: ^1.0.12
+  permission_handler: ^3.0.0
 
 dev_dependencies:
   flutter_test:

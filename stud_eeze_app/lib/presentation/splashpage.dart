@@ -7,6 +7,7 @@ import 'package:stud_eeze_app/presentation/tab_pages/info.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/post_page.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/profile_page.dart';
 import 'package:stud_eeze_app/utils/global.dart';
+import 'package:stud_eeze_app/utils/style.dart';
 
 class SplashPage extends StatefulWidget {
   static const String routeNamed = 'SplashPage';
@@ -74,7 +75,7 @@ class _SplashPageState extends State<SplashPage> {
               padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: currentPage == index
-                    ? Colors.deepPurple
+                    ? Styles.BACKAGROUND_COLOR
                     : Colors.transparent,
                 borderRadius: BorderRadius.circular(5),
               ),

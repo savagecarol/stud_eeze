@@ -17,15 +17,7 @@ final FirebaseAuthService firebaseAuthService =
     FirebaseAuthService.getInstance();
 final FirebaseService firebaseService = FirebaseService.getInstance();
 
-// bool validateAndSave() {
-//   final form = formKey.currentState;
-//   if (form.validate()) {
-//     form.save();
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
+
 
 String validateEmail(String email) {
   if (email == null || email.isEmpty) return 'Required !!!';

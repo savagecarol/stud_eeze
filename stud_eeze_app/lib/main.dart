@@ -29,6 +29,7 @@ class StudEeze extends StatelessWidget {
         ),
         initialRoute: Auth.routeNamed,
         routes: {
+            // IndexPage.routeNamed: (BuildContext context) => IndexPage(), 
            Auth2.routeNamed: (BuildContext context) => Auth2(),  
            Data.routeNamed: (BuildContext context) => Data(), 
           Auth.routeNamed: (BuildContext context) => Auth(),  
