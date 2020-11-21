@@ -2054,13 +2054,13 @@ a:hover.back-to-top {
 	}
 
 	.footer .footer-col.middle {
-		margin-right: auto;
-		margin-left: auto;
+		margin-right: center;
+		margin-left: center;
 	}
 
 	.footer .footer-col.last {
 		margin-right: 0;
-		margin-left: auto;
+		margin-left:center;
 	}
 	/* end of footer */
 
@@ -2068,8 +2068,8 @@ a:hover.back-to-top {
 	/* Extra Pages */
 	.ex-header h1 {
 		width: 60%;
-		margin-right: auto;
-		margin-left: auto;
+		margin-right: center;
+		margin-left: center;
 	}
 
 	.ex-basic-2 .form-container {
