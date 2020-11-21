@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
         return ProfilePage();
         break;
       case 3:
-        return InfoPage();
+        return Info();
         break;
       default:
         return HomePage();
@@ -71,7 +71,7 @@ class _SplashPageState extends State<SplashPage> {
               padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: currentPage == index
-                    ? Colors.purpleAccent
+                    ? Colors.deepPurple
                     : Colors.transparent,
                 borderRadius: BorderRadius.circular(5),
               ),
@@ -80,7 +80,7 @@ class _SplashPageState extends State<SplashPage> {
                   icontab,
                   color: currentPage == index
                       ? Colors.white
-                      : Colors.black,
+                      : Colors.black38,
                   size: ScreenUtil.instance.setHeight(32),
                 ),
               ),
