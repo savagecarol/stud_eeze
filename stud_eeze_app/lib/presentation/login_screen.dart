@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stud_eeze_app/model/store_observer.dart';
 import 'package:stud_eeze_app/presentation/custom/custom_button.dart';
 import 'package:stud_eeze_app/presentation/custom/user_store.dart';
+import 'package:stud_eeze_app/presentation/data.dart';
 import 'package:stud_eeze_app/presentation/splashpage.dart';
 import 'package:stud_eeze_app/utils/global.dart';
 
@@ -47,17 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                               fit: BoxFit.fill)),
                     ),
                   ),
-                  // Center(
-                  //   child: CustomButton(
-                  //     labelText: 'Sign In With Gmail',
-                  //     isLoading: false,
-                  //     postIcon: Icons.arrow_forward,
-                  //     visiblepostIcon: true,
-                  //     onTap: () {
-                  //       Navigator.pushNamed(context, SplashPage.routeNamed);
-                  //     },
-                  //   ),
-                  // ),
+  
                   Center(child: StoreObserver<UserStore>(
                       builder: (UserStore store, BuildContext context) {
                     return CustomButton(
