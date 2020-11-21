@@ -46,7 +46,8 @@ class _PostPageState extends State<PostPage> {
        child:SingleChildScrollView(
          child: Padding(padding: EdgeInsets.all(32),
          child: Column(children: [
-              Text('Teacher Login')
+              Text('Add Pdf',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
          ],),),
        ) 
       ),

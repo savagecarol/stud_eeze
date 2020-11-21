@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stud_eeze_app/model/user.dart';
-import 'package:stud_eeze_app/presentation/data.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/homepage.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/info.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/post_page.dart';

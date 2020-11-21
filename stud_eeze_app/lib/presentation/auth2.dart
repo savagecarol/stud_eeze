@@ -19,11 +19,9 @@ class _Auth2State extends State<Auth2> {
 
   check() async {
     user = await firebaseAuthService.getData();
-    print("fdfdgfdgfdg");
     if (user == null) {
       Navigator.pushNamed(context, Data.routeNamed);
     } else {
-      print("fggfgf");
       Navigator.pushNamed(context, SplashPage.routeNamed);
     }
   }

@@ -55,6 +55,8 @@ class FirebaseAuthService {
       await _firebaseAuth.signOut();
       await _googleSignIn.signOut();
       uid = '';
+      user = null;
+      main_user = null;
       print("User Signed out");
     } catch (e) {
       print("error in signout");
