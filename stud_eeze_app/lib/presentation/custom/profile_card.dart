@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stud_eeze_app/utils/style.dart';
 
-
 class CustomProfileCard extends StatelessWidget {
   final String image;
   final String name;
@@ -15,8 +14,8 @@ class CustomProfileCard extends StatelessWidget {
   final Function onTap;
   CustomProfileCard(
       {this.isData = false,
-         this.onTap,
-         this.isLoading=false,
+      this.onTap,
+      this.isLoading = false,
       this.imgh = 90,
       this.imgw = 80,
       this.image,
@@ -45,7 +44,7 @@ class CustomProfileCard extends StatelessWidget {
                         offset: Offset(0, 0))
                   ])
             : BoxDecoration(),
-        child: (isData== false)
+        child: (isData == false)
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -76,7 +75,7 @@ class CustomProfileCard extends StatelessWidget {
                               children: <Widget>[
                                 Container(
                                   width: ScreenUtil.instance.setWidth(200),
-                                  child: Text(name,
+                                  child: Text( name,
                                       style: TextStyle(
                                           fontFamily: 'Montserrat',
                                           fontSize: 18,
@@ -88,7 +87,7 @@ class CustomProfileCard extends StatelessWidget {
                                 Container(
                                     width: ScreenUtil.instance.setWidth(200),
                                     child: Text(
-                                      number,
+                                     (number==null)?'':number,
                                       style: TextStyle(
                                           fontFamily: 'Montserrat',
                                           fontSize: 16,
@@ -103,10 +102,12 @@ class CustomProfileCard extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: onTap,
-                    child: (isLoading== false)?Container(
-                        child: (istrue)
-                            ? Icon(Icons.arrow_forward_ios)
-                            : Container()):Container(),
+                    child: (isLoading == false)
+                        ? Container(
+                            child: (istrue)
+                                ? Icon(Icons.arrow_forward_ios)
+                                : Container())
+                        : Container(),
                   )
                 ],
               )

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stud_eeze_app/model/user.dart';
 import 'package:stud_eeze_app/presentation/custom/custom_button.dart';
 import 'dart:async';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:stud_eeze_app/presentation/custom/profile_card.dart';
 import 'package:stud_eeze_app/src/pages/call.dart';
 import 'package:stud_eeze_app/utils/global.dart';
 
@@ -43,10 +45,10 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  
                     children: [
                       Text('class',
                           style: TextStyle(
@@ -57,7 +59,6 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Institution',
                           style: TextStyle(
@@ -74,30 +75,51 @@ class _HomePageState extends State<HomePage> {
               ),
               Text('Class Teacher',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
-              Builder(
-                builder: (context) {
-                  // User teacher;
-                  // for (int i = 0; i < all.length; i++) {
-                  //   if (all[i].className == user.className &&
-                  //       all[i].iname == user.iname &&
-                  //       user.role == 'te') {
-                  //     teacher = all[i];
-                  //   }
-                  // }
-                  return Container();
-                },
+                  SizedBox(
+                height: ScreenUtil.instance.setHeight(32),
               ),
+              Builder(builder: (BuildContext context) {
+                return Container(
+                  height: ScreenUtil.instance.setHeight(200),
+                  child:  ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: all.length,
+                          itemBuilder: (context, index) {
+                            print(all[index].role);
+                            return (all[index].role!='stu')
+                                ? CustomProfileCard(
+                                    image: all[index].image,
+                                    name: all[index].name,
+                                    number: all[index].contactNumber,
+                                  )
+                                : Container();
+                          }),
+                );
+              }),
               Text('Class Student ',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
-              Builder(
-
-                
-                builder: (context) {
-                  return Container();
-                },
-              ),
               SizedBox(
-                height: ScreenUtil.instance.setHeight(81),
+                height: ScreenUtil.instance.setHeight(32),
+              ),
+              Builder(builder: (BuildContext context) {
+                return Container(
+                  height: ScreenUtil.instance.setHeight(240),
+                  child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: all.length,
+                      itemBuilder: (context, index) {
+                        return (all[index].role == 'stu')
+                            ? CustomProfileCard(
+                                image: all[index].image,
+                                name: all[index].name,
+                                number: all[index].contactNumber,
+                              )
+                            : Container();
+                      }),
+                );
+              }),
+              SizedBox(
+                height: ScreenUtil.instance.setHeight(32),
               ),
               CustomButton(
                 labelText: 'doubt Session',

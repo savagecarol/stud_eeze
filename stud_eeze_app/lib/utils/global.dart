@@ -11,7 +11,7 @@ int currentPage = 0;
 FirebaseUser main_user;
 User user;
 String uid;
-List all;
+List<User> all;
 
 final PreferenceService preferenceService = PreferenceService.getInstance();
 final FirebaseAuthService firebaseAuthService =

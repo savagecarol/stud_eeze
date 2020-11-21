@@ -107,7 +107,7 @@ class FirebaseAuthService {
     return user;
   }
 
-  Future<List> getAll() async {
+  Future<List<User>> getAll() async {
     Map<String, User> productList = Map<String, User>();
     QuerySnapshot querySnapshot =
         await _firestore.collection('users').getDocuments();

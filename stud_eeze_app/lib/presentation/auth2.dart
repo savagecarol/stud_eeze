@@ -30,6 +30,7 @@ class _Auth2State extends State<Auth2> {
   getAllUser() async {
     all = await firebaseAuthService.getAll();
     print(all);
+
   }
 
   @override
