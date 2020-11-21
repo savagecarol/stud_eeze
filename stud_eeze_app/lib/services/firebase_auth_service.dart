@@ -34,10 +34,9 @@ class FirebaseAuthService {
 
   Future<FirebaseUser> getCurrentuser() async {
     try {
-      FirebaseUser user = await _firebaseAuth.currentUser();
-      main_user = user;
-      if (user != null)
-        return user;
+      main_user = await _firebaseAuth.currentUser();
+      if ( main_user != null)
+        return  main_user;
       else {
         return null;
       }
