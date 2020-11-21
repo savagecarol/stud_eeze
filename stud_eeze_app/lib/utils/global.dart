@@ -11,13 +11,12 @@ int currentPage = 0;
 FirebaseUser main_user;
 User user;
 String uid;
+List all;
 
 final PreferenceService preferenceService = PreferenceService.getInstance();
 final FirebaseAuthService firebaseAuthService =
     FirebaseAuthService.getInstance();
 final FirebaseService firebaseService = FirebaseService.getInstance();
-
-
 
 String validateEmail(String email) {
   if (email == null || email.isEmpty) return 'Required !!!';

@@ -15,6 +15,7 @@ class _Auth2State extends State<Auth2> {
   void initState() {
     super.initState();
     check();
+    getAllUser();
   }
 
   check() async {
@@ -24,6 +25,11 @@ class _Auth2State extends State<Auth2> {
     } else {
       Navigator.pushNamed(context, SplashPage.routeNamed);
     }
+  }
+
+  getAllUser() async {
+    all = await firebaseAuthService.getAll();
+    print(all);
   }
 
   @override

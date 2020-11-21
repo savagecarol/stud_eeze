@@ -106,4 +106,18 @@ class FirebaseAuthService {
     print(user.email);
     return user;
   }
+
+  Future<List> getAll() async {
+    Map<String, User> productList = Map<String, User>();
+    QuerySnapshot querySnapshot =
+        await _firestore.collection('users').getDocuments();
+    querySnapshot.documents.forEach((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.documentID != null) {
+        User product =
+            User.fromJson(jsonDecode(jsonEncode(documentSnapshot.data)));
+        productList.addAll({documentSnapshot.documentID: product});
+      }
+    });
+    return productList.values.toList();
+  }
 }
