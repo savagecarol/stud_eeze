@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stud_eeze_app/model/store_observer.dart';
 import 'package:stud_eeze_app/presentation/custom/custom_button.dart';
-import 'package:stud_eeze_app/presentation/custom/user_store.dart';
-import 'package:stud_eeze_app/presentation/data.dart';
 import 'package:stud_eeze_app/presentation/splashpage.dart';
+import 'package:stud_eeze_app/store/user_store.dart';
 import 'package:stud_eeze_app/utils/global.dart';
 
 class LoginPage extends StatefulWidget {

@@ -3,10 +3,11 @@ import 'package:flutter/services.dart';
 
 import 'package:provider/provider.dart';
 import 'package:stud_eeze_app/presentation/auth.dart';
-import 'package:stud_eeze_app/presentation/custom/user_store.dart';
+import 'package:stud_eeze_app/presentation/auth2.dart';
 import 'package:stud_eeze_app/presentation/data.dart';
 import 'package:stud_eeze_app/presentation/login_screen.dart';
 import 'package:stud_eeze_app/presentation/splashpage.dart';
+import 'package:stud_eeze_app/store/user_store.dart';
 void main() => runApp(StudEeze());
 class StudEeze extends StatelessWidget {
   @override
@@ -26,8 +27,9 @@ class StudEeze extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
         ),
-        initialRoute: Data.routeNamed,
+        initialRoute: Auth.routeNamed,
         routes: {
+             Auth2.routeNamed: (BuildContext context) => Auth2(), 
            Data.routeNamed: (BuildContext context) => Data(), 
           Auth.routeNamed: (BuildContext context) => Auth(),  
            SplashPage.routeNamed: (BuildContext context) => SplashPage(),  

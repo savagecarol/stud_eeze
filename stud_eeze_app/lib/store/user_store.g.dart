@@ -78,6 +78,23 @@ mixin _$UserStore on _UserStore, Store {
     }, _$isCodeAutoReceivedAtom, name: '${_$isCodeAutoReceivedAtom.name}_set');
   }
 
+  final _$loggedInUserAtom = Atom(name: '_UserStore.loggedInUser');
+
+  @override
+  User get loggedInUser {
+    _$loggedInUserAtom.context.enforceReadPolicy(_$loggedInUserAtom);
+    _$loggedInUserAtom.reportObserved();
+    return super.loggedInUser;
+  }
+
+  @override
+  set loggedInUser(User value) {
+    _$loggedInUserAtom.context.conditionallyRunInAction(() {
+      super.loggedInUser = value;
+      _$loggedInUserAtom.reportChanged();
+    }, _$loggedInUserAtom, name: '${_$loggedInUserAtom.name}_set');
+  }
+
   final _$checkAtom = Atom(name: '_UserStore.check');
 
   @override
@@ -144,6 +161,20 @@ mixin _$UserStore on _UserStore, Store {
       super.isData = value;
       _$isDataAtom.reportChanged();
     }, _$isDataAtom, name: '${_$isDataAtom.name}_set');
+  }
+
+  final _$getDataAsyncAction = AsyncAction('getData');
+
+  @override
+  Future getData() {
+    return _$getDataAsyncAction.run(() => super.getData());
+  }
+
+  final _$addDataAsyncAction = AsyncAction('addData');
+
+  @override
+  Future addData(String className, String iname, int k) {
+    return _$addDataAsyncAction.run(() => super.addData(className, iname, k));
   }
 
   final _$logInAsyncAction = AsyncAction('logIn');

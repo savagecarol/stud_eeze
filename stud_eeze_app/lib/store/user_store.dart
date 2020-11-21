@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:mobx/mobx.dart';
+import 'package:stud_eeze_app/model/user.dart';
 import 'package:stud_eeze_app/utils/global.dart';
 part 'user_store.g.dart';
 
@@ -19,8 +20,8 @@ abstract class _UserStore with Store {
   @observable
   bool isCodeAutoReceived = false;
 
-  // @observable
-  // User loggedInUser;
+  @observable
+  User loggedInUser;
 
   @observable
   bool check = false;
@@ -34,13 +35,28 @@ abstract class _UserStore with Store {
   @observable
   bool isData = true;
 
-  // @action
-  // getData() async {
-  //   isData = false;
-  //   if(loggedInUser == null)
-  //        loggedInUser = await firebaseAuthService.getData();
-  //   isData = true;
-  // }
+  @action
+  getData() async {
+    isData = false;
+    isLoading = true;
+    loggedInUser = await firebaseAuthService.getData();
+    if (loggedInUser == null) {
+      isData = false;
+      print("ffgfdgfg");
+    } else {
+      isData = true;
+      user = loggedInUser;
+      print(loggedInUser.role);
+    }
+    isLoading = false;
+  }
+
+  @action
+  addData(String className, String iname, int k) async {
+    isData = false;
+    loggedInUser = await firebaseAuthService.addData(className, iname, k);
+    isData = true;
+  }
 
   @action
   logIn() async {
@@ -51,7 +67,6 @@ abstract class _UserStore with Store {
       if (user == null) {
         isLoading = false;
       } else {
-
         await preferenceService.setUID(user.uid);
         isLoading = false;
       }

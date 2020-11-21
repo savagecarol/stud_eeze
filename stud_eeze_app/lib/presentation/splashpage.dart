@@ -43,7 +43,7 @@ class _SplashPageState extends State<SplashPage> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           _getBottomBarItem(index: 0, icontab: Icons.home),
-          _getBottomBarItem(index: 1, icontab: Icons.add),
+          _getBottomBarItem(index: 1, icontab:(user.role == "stu")? Icons.note: Icons.add),
           _getBottomBarItem(index: 2, icontab: Icons.person),
           _getBottomBarItem(index: 3, icontab: Icons.info),
         ],
