@@ -33,7 +33,7 @@ The main motive of our project 'Stud Eeze' is to enhance our online education sy
 
 
 
-```Flutter``` ```Dart``` ```Firebase``` ```Agora.io``` ```MarkDown``` ```HTML``` ```CSS``` ```Formspree```
+```Flutter``` ```Dart``` ```Firebase``` ```Agora.io``` ```MarkDown``` ```HTML``` ```CSS``` ```Formspree``` ```Bootstrap``` ```Javascript```
 
  
  
