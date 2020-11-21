@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stud_eeze_app/model/user.dart';
+import 'package:stud_eeze_app/presentation/data.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/homepage.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/info.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/post_page.dart';
 import 'package:stud_eeze_app/presentation/tab_pages/profile_page.dart';
 import 'package:stud_eeze_app/utils/global.dart';
-
 
 class SplashPage extends StatefulWidget {
   static const String routeNamed = 'SplashPage';
@@ -16,12 +17,6 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-
-  @override
-  void initState() { 
-    super.initState();
-        firebaseAuthServices.
-  }
 
 
   _getBody() {
@@ -51,7 +46,9 @@ class _SplashPageState extends State<SplashPage> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           _getBottomBarItem(index: 0, icontab: Icons.home),
-          _getBottomBarItem(index: 1, icontab:(user.role == "stu")? Icons.note: Icons.add),
+          _getBottomBarItem(
+              index: 1,
+              icontab: (user.role == 'stu') ? (Icons.note) : Icons.add),
           _getBottomBarItem(index: 2, icontab: Icons.person),
           _getBottomBarItem(index: 3, icontab: Icons.info),
         ],
@@ -86,9 +83,7 @@ class _SplashPageState extends State<SplashPage> {
               child: Center(
                 child: Icon(
                   icontab,
-                  color: currentPage == index
-                      ? Colors.white
-                      : Colors.black38,
+                  color: currentPage == index ? Colors.white : Colors.black38,
                   size: ScreenUtil.instance.setHeight(32),
                 ),
               ),
@@ -105,11 +100,11 @@ class _SplashPageState extends State<SplashPage> {
         height: defaultHeight, width: defaultWidth, allowFontScaling: false)
       ..init(context);
     return SafeArea(
-          child: Scaffold(
-          body: Column(
-        children: <Widget>[Expanded(child: _getBody()), _getBottomBar()],
-      ),
-      resizeToAvoidBottomPadding: false,
+      child: Scaffold(
+        body: Column(
+          children: <Widget>[Expanded(child: _getBody()), _getBottomBar()],
+        ),
+        resizeToAvoidBottomPadding: false,
       ),
     );
   }

@@ -29,15 +29,18 @@ class FirebaseAuthService {
         await _firebaseAuth.signInWithCredential(credential);
     main_user = authResult.user;
     print("signed in " + main_user.displayName);
+    uid = main_user.uid;
     return main_user;
   }
 
   Future<FirebaseUser> getCurrentuser() async {
     try {
       main_user = await _firebaseAuth.currentUser();
-      if ( main_user != null)
-        return  main_user;
-      else {
+      if (main_user != null) {
+        uid = main_user.uid;
+        print(uid);
+        return main_user;
+      } else {
         return null;
       }
     } catch (e) {
@@ -51,7 +54,7 @@ class FirebaseAuthService {
     try {
       await _firebaseAuth.signOut();
       await _googleSignIn.signOut();
-      await preferenceService.removeUID();
+      uid = '';
       print("User Signed out");
     } catch (e) {
       print("error in signout");
@@ -60,22 +63,20 @@ class FirebaseAuthService {
   }
 
   Future<User> getData() async {
-    String uid = await preferenceService.getUID();
-
-    User k;
+    print(uid);
+    print("lol");
     QuerySnapshot querySnapshot =
         await _firestore.collection('users').getDocuments();
     querySnapshot.documents.forEach((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.documentID != null &&
           documentSnapshot.documentID == uid) {
-        k = User.fromJson(jsonDecode(jsonEncode(documentSnapshot.data)));
+        user = User.fromJson(jsonDecode(jsonEncode(documentSnapshot.data)));
       }
     });
-    if (k == null) {
-      print(k);
+    if (user == null) {
       return null;
     }
-    return k;
+    return user;
   }
 
   Future<User> addData(String className, String iname, int k) async {
@@ -85,8 +86,6 @@ class FirebaseAuthService {
     } else {
       role = "te";
     }
-    String uid = await preferenceService.getUID();
-
     print(main_user.phoneNumber);
     print(className);
     await _firestore.collection('users').document(uid).setData({
@@ -100,7 +99,7 @@ class FirebaseAuthService {
     });
     DocumentSnapshot documentSnapshot =
         await _firestore.collection('users').document(uid).get();
-     user = User.fromJson(documentSnapshot.data);
+    user = User.fromJson(documentSnapshot.data);
     print(user.name);
     print(user.email);
     return user;

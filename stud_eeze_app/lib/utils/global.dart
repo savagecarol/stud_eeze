@@ -10,6 +10,7 @@ double defaultWidth = 414;
 int currentPage = 0;
 FirebaseUser main_user;
 User user;
+String uid;
 
 final PreferenceService preferenceService = PreferenceService.getInstance();
 final FirebaseAuthService firebaseAuthService =

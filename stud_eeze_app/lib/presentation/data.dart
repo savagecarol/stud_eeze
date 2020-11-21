@@ -160,14 +160,14 @@ class DataState extends State<Data> {
                           labelText: 'NEXT',
                           postIcon: Icons.arrow_forward,
                           visiblepostIcon: true,
-                          isLoading: store.isData,
+                          isLoading: false,
                           onTap: () async {
                             _signINFrom.currentState.save();
                             if (_signINFrom.currentState.validate()) {
                               try {
                                 if (k != 0) {
-                                  await store.addData(className, iname, k);
-                                  print("fdgfdgfdgfdg");
+                                  await firebaseAuthService.addData(
+                                      className, iname, k);
                                   Navigator.pushNamed(
                                       context, SplashPage.routeNamed);
                                 } else {

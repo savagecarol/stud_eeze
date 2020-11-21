@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_plugin_pdf_viewer/flutter_plugin_pdf_viewer.dart';
+import 'package:stud_eeze_app/utils/global.dart';
 
 
 class PostPage extends StatefulWidget {
@@ -33,13 +34,22 @@ class _PostPageState extends State<PostPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("My Documnet"),),
+    return SafeArea(child:(user.role == 'stu')?Scaffold(
+      appBar: AppBar(title: Text("Documnet"),),
       body: _loading ? Center(child: CircularProgressIndicator(),) : PDFViewer(document: _doc, 
       indicatorBackground: Colors.red,
       // showIndicator: false,
       // showPicker: false,
        ),
-    );
+    ):Scaffold(
+      body:Container(
+       child:SingleChildScrollView(
+         child: Padding(padding: EdgeInsets.all(32),
+         child: Column(children: [
+              Text('Teacher Login')
+         ],),),
+       ) 
+      ),
+    ));
   }
 }

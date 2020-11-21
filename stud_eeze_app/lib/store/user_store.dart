@@ -67,7 +67,7 @@ abstract class _UserStore with Store {
       if (user == null) {
         isLoading = false;
       } else {
-        await preferenceService.setUID(user.uid);
+
         isLoading = false;
       }
     } catch (e) {
@@ -88,8 +88,6 @@ abstract class _UserStore with Store {
       {
         check = false;
         isLoggedIn = true;
-        print(user.uid);
-        await preferenceService.setUID(user.uid);
       }
     }
   }

@@ -6,6 +6,8 @@ import 'package:stud_eeze_app/presentation/splashpage.dart';
 import 'package:stud_eeze_app/store/user_store.dart';
 import 'package:stud_eeze_app/utils/global.dart';
 
+import 'auth2.dart';
+
 class LoginPage extends StatefulWidget {
   static const String routeNamed = 'LoginPage';
   @override
@@ -61,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                           showSnackbar("Error in login", context);
                         } else {
                           currentPage = 0;
-                          Navigator.pushNamed(context, SplashPage.routeNamed);
+                          Navigator.pushNamed(context, Auth2.routeNamed);
                         }
                       },
                     );
