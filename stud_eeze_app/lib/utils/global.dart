@@ -1,9 +1,18 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:stud_eeze_app/services/firebase_auth_service.dart';
+import 'package:stud_eeze_app/services/firebase_services.dart';
+import 'package:stud_eeze_app/services/preference_services.dart';
 
 double defaultHeight = 896;
 double defaultWidth = 414;
 int currentPage = 0;
+FirebaseUser main_user;
+
+final PreferenceService preferenceService = PreferenceService.getInstance();
+final FirebaseAuthService firebaseAuthService =
+    FirebaseAuthService.getInstance();
+final FirebaseService firebaseService = FirebaseService.getInstance();
 
 // bool validateAndSave() {
 //   final form = formKey.currentState;
@@ -64,4 +73,3 @@ Widget showSnackbar(
     return SizedBox();
   }
 }
-
